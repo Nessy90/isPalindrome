@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 bool isPalindrome(const std::string &text);
 
@@ -20,7 +21,7 @@ bool isPalindrome(const std::string &text)
 {
     for (int i = 0; i < text.length()/2; i++)
     {
-        if (text[i] != text[text.length()-i-1])
+        if (std::tolower(text[i]) != std::tolower(text[text.length()-i-1]))
             return false;
     }
     return true;
